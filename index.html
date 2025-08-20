@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Только футер</title>
+  <title>Шапка и футер</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* Вся страница — флекс-колонка; футер уезжает вниз за счёт margin-top:auto */
+    /* Базовые стили + «прижатый» футер */
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -15,8 +15,19 @@
       font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background: #fff;
     }
+    /* Шапка из add_headder */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 1px solid #e5e7eb; background: #fff;
+      position: sticky; top: 0;
+    }
+    .brand { font-weight: 700; text-decoration: none; color: #111; }
+    nav a { margin: 0 8px; text-decoration: none; color: #111; }
+    nav a:hover { text-decoration: underline; }
+
+    /* Футер из added_fotter */
     footer {
-      margin-top: auto;                 /* магия «прижатия» к низу */
+      margin-top: auto;
       padding: 16px;
       text-align: center;
       border-top: 1px solid #e5e7eb;
@@ -29,6 +40,17 @@
   </style>
 </head>
 <body>
+  <header>
+    <a class="brand" href="#">Мой Сайт</a>
+    <nav aria-label="Основное меню">
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+
+  <main style="flex:1"></main>
+
   <footer>
     © 2025 Мой Сайт · <a href="#">Политика конфиденциальности</a>
   </footer>
